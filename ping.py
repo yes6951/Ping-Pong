@@ -21,6 +21,8 @@ class GameSprite(sprite.Sprite):
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
+    def amogus(self):
+        pass
 
 
 class Player(GameSprite):
