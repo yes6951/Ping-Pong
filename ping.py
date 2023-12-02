@@ -1,5 +1,5 @@
-import pygame
-import time
+from pygame import *
+
 
 
 class GameSprite(sprite.Sprite):
@@ -49,7 +49,14 @@ window.fill(back)
 player1 = Player("racket.png", 50, 250, 4, 50, 150)
 player2 = Player("racket.png", win_width - 50, 250, 4, 50, 150)
 
+ball = GameSprite("tenis_ball.png", 200, 200, 50, 50, 4)
 
+color = (169,169,169)
+win_width = 600
+win_height = 500
+
+window = display.set_mode((win_height, win_height))
+window.fill(color)
 
 #флаги отвечающие за состояние игры
 game = True
@@ -58,9 +65,17 @@ clock = time.Clock()
 FPS = 60
 
 while game:
-    for e in event.get:
+    for e in event.get():
         if e.type == QUIT:
             game = False
 
+
+
     player1.update_l()
+    player1.reset()
+
     player2.update_r()
+    player2.reset()
+
+    display.update()
+    clock.tick(FPS)
