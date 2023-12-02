@@ -20,7 +20,7 @@ class GameSprite(sprite.Sprite):
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
-
+a=0
 # класс-наследник для спрайта-игрока (управляется стрелками)
 class Player(GameSprite):
     def update_r(self):
