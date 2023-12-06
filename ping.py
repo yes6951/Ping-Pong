@@ -84,6 +84,7 @@ while game:
             speed_x *= 1
             speed_y *= -1
 
+
         player1.reset()
         player2.reset()
         ball.reset()
