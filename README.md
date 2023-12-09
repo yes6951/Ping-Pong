@@ -2,6 +2,8 @@
 This project is a Ping-Pong game with a graphical interface. You can control 2 rackets to hit the ball, if you don't hit the ball with your racket, you will lose.
 This code is written in the Python programming language.
 
+![tenis](https://github.com/yes6951/Ping-Pong/assets/151373476/7427f3cb-9655-4757-964b-c3f4a837e253)
+
 Simple and good game wrote on Pygame.
 
 Featuring:
