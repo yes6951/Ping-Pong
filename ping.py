@@ -1,4 +1,6 @@
 from pygame import *
+from random import randint as rt
+
 
 '''Необходимые классы'''
 
@@ -20,8 +22,6 @@ class GameSprite(sprite.Sprite):
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
 
-    def amogus(self):
-        pass
 
 # класс-наследник для спрайта-игрока (управляется стрелками)
 class Player(GameSprite):
@@ -55,10 +55,12 @@ FPS = 60
 speed_x = 3
 speed_y = 3
 
-# создание мяча и ракеток
+# создание мяча и ракеток coins🤑🤑
 player1 = Player('racket.png', 30, 200, 4, 50, 150)
 player2 = Player('racket.png', 520, 200, 4, 50, 150)
 ball = GameSprite('tenis_ball.png', 200, 200, 4, 50, 50)
+coin = GameSprite('coin.png', rt(50, win_width - 50), rt(50, win_height - 50), 0, 50, 50)
+
 
 font.init()
 font = font.Font(None, 35)
@@ -75,6 +77,7 @@ while game:
         window.fill(back)
         player1.update_l()
         player2.update_r()
+        coin.update()
         ball.rect.x += speed_x
         ball.rect.y += speed_y
         if sprite.collide_rect(player1, ball) or sprite.collide_rect(player2, ball):
@@ -88,6 +91,7 @@ while game:
         player1.reset()
         player2.reset()
         ball.reset()
+        coin.reset()
 
     display.update()
     clock.tick(FPS)
