@@ -1,7 +1,6 @@
 import pygame
 import time
 
-
 class GameSprite(sprite.Sprite):
     # amogus
     def __init__(self, player_image, player_x, player_y, size_x, size_y, player_speed):
